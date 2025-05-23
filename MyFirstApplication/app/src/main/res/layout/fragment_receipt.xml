@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receipt"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#171411"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/receiptDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#171411"
+        android:textSize="16sp"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Orders"
+        android:backgroundTint="#df6c20"
+        android:textColor="@android:color/white" />
+</LinearLayout>

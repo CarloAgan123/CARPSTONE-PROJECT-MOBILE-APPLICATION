@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buying_graph"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_stallDetailsFragment"
+            app:destination="@id/stallDetailsFragment"
+            app:enterAnim="@anim/from_new_bottom"
+            app:exitAnim="@anim/to_new_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/from_new_top"
+            app:exitAnim="@anim/to_new_bottom"
+            app:popEnterAnim="@anim/from_new_bottom"
+            app:popExitAnim="@anim/to_new_top" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/from_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment"
+            app:enterAnim="@anim/from_new_bottom"
+            app:exitAnim="@anim/to_new_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom" />
+        <action
+            android:id="@+id/action_profileFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_trackOrderFragment"
+            app:destination="@id/trackOrderFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_allOrdersFragment"
+            app:destination="@id/allOrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_stallDetailsFragment"
+            app:destination="@id/stallDetailsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutFragment2"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/from_new_bottom"
+            app:exitAnim="@anim/to_new_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom"
+            app:popUpTo="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
+        <action
+            android:id="@+id/action_productDetailsFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/from_new_bottom"
+            app:exitAnim="@anim/to_new_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom"
+            app:popUpTo="@id/productDetailsFragment" />
+    </fragment>
+    <argument
+        android:name="product"
+        app:argType="com.example.myfirstapplication.data.Product" />
+    <fragment
+        android:id="@+id/stallDetailsFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.StallDetailsFragment"
+        android:label="StallDetailsFragment"
+        tools:layout="@layout/fragment_stalls_details">
+        <action
+            android:id="@+id/action_stallDetailsFragment_to_stallMenuItemDetailsFragment"
+            app:destination="@id/stallMenuItemDetailsFragment" />
+        <action
+            android:id="@+id/action_stallDetailsFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_stallDetailsFragment_to_stallMenuItemPreOrderDetailsFragment"
+            app:destination="@id/stallMenuItemPreOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAccountFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.settings.UserAccountFragment"
+        android:label="UserAccountFragment"
+        tools:layout="@layout/fragment_user_account">
+        <action
+            android:id="@+id/action_userAccountFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stallMenuItemDetailsFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.stall.StallMenuItemDetailsFragment"
+        android:label="StallMenuItemDetailsFragment"
+        tools:layout="@layout/fragment_menu_item_details">
+        <action
+            android:id="@+id/action_stallMenuItemDetailsFragment_to_stallDetailsFragment"
+            app:destination="@id/stallDetailsFragment" />
+        <action
+            android:id="@+id/action_stallMenuItemDetailsFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/action_stallMenuItemDetailsFragment_to_checkoutFragment2"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top"
+            app:popEnterAnim="@anim/from_top"
+            app:popExitAnim="@anim/to_bottom"
+            app:popUpTo="@id/stallMenuItemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.CheckoutFragment"
+        android:label="CheckoutFragment"
+        tools:layout="@layout/fragment_checkout">
+        <action
+            android:id="@+id/action_checkoutFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_checkoutFragment_to_paymentConfirmationFragment"
+            app:destination="@id/paymentConfirmationFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.TransactionFragment"
+        android:label="TransactionFragment"
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_transactionFragment_to_receiptFragment"
+            app:destination="@id/receiptFragment"
+            app:popUpTo="@id/profileFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_paymentConfirmationFragment"
+            app:destination="@id/paymentConfirmationFragment"
+            app:popUpTo="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiptFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.ReceiptFragment"
+        android:label="ReceiptFragment"
+        tools:layout="@layout/fragment_receipt"/>
+    <fragment
+        android:id="@+id/menuItemsFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.MenuItemsFragment"
+        android:label="MenuItemsFragment"
+        tools:layout="@layout/fragment_pre_order_details">
+        <action
+            android:id="@+id/action_menuItemsFragment_to_stallMenuItemDetailsFragment"
+            app:destination="@id/stallMenuItemDetailsFragment" />
+        <action
+            android:id="@+id/action_menuItemsFragment_to_stallMenuItemPreOrderDetailsFragment"
+            app:destination="@id/stallMenuItemPreOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackOrderFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.settings.TrackOrderFragment"
+        android:label="TrackOrderFragment"
+        tools:layout="@layout/fragment_order_list">
+        <action
+            android:id="@+id/action_trackOrderFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stallMenuItemPreOrderDetailsFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.stall.StallMenuItemPreOrderDetailsFragment"
+        android:label="StallMenuItemPreOrderDetailsFragment"
+        tools:layout="@layout/fragment_menu_item_preorder_details">
+        <action
+            android:id="@+id/action_stallMenuItemPreOrderDetailsFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/from_top"
+            app:exitAnim="@anim/to_bottom"
+            app:popEnterAnim="@anim/from_bottom"
+            app:popExitAnim="@anim/to_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification"/>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.settings.TransactionHistoryFragment"
+        android:label="TransactionHistoryFragment"
+        tools:layout="@layout/fragment_transaction_history">
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionFragment2"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.settings.AllOrdersFragment"
+        android:label="AllOrdersFragment"
+        tools:layout="@layout/fragment_all_orders">
+        <action
+            android:id="@+id/action_allOrdersFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentConfirmationFragment"
+        android:name="com.example.myfirstapplication.fragments.loginRegister.shopping.PaymentConfirmationFragment"
+        android:label="PaymentConfirmationFragment"
+        tools:layout="@layout/fragment_gcash_scan_qr_code">
+        <action
+            android:id="@+id/action_paymentConfirmationFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:enterAnim="@anim/from_new_bottom"
+            app:exitAnim="@anim/to_new_top"
+            app:popEnterAnim="@anim/from_new_top"
+            app:popExitAnim="@anim/to_new_bottom"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+</navigation>

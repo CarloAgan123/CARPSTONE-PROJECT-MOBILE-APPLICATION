@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbPreOrder"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="16dp">
+
+                <TextView
+                    android:id="@+id/tvPreOrder"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/candal"
+                    android:gravity="center"
+                    android:paddingRight="20dp"
+                    android:text="Stalls Menus"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.87" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPreOrderItem"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintTop_toBottomOf="@+id/tbPreOrder"
+            tools:listitem="@layout/pre_order_item"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/guidelineBottom"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+                app:layout_constraintBottom_toTopOf="@id/guideline10">
+
+                <TextView
+                    android:id="@+id/tvPickupDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Menu  Day"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/radioButtonToday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All   "
+                    app:layout_constraintEnd_toStartOf="@id/radioButtonToday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPickupDay"
+                    />
+
+
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonToday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today"
+                    app:layout_constraintEnd_toStartOf="@id/radioButtonTomorrow"
+                    app:layout_constraintStart_toEndOf="@id/radioButtonAll"
+                    app:layout_constraintTop_toTopOf="@+id/radioButtonAll"
+                    app:layout_constraintBottom_toBottomOf="@id/radioButtonAll"/>
+
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonTomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Tomorrow"
+                    app:layout_constraintBottom_toBottomOf="@id/radioButtonToday"
+                    app:layout_constraintEnd_toStartOf="@id/radioButtonOthers"
+                    app:layout_constraintStart_toEndOf="@id/radioButtonToday"
+                    app:layout_constraintTop_toTopOf="@+id/radioButtonToday" />
+
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonOthers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Others"
+                    app:layout_constraintBottom_toBottomOf="@id/radioButtonToday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/radioButtonTomorrow"
+                    app:layout_constraintTop_toTopOf="@+id/radioButtonToday" />
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.0" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="Button Down"
+            app:layout_constraintBottom_toBottomOf="@id/rvPreOrderItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/arrow_down"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

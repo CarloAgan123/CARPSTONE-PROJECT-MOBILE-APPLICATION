@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/arrow_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="Back Arrow"
+                app:tint="#171411" />
+
+            <TextView
+                android:id="@+id/checkoutTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Checkout"
+                android:textSize="20sp"
+                android:textColor="#171411"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintStart_toEndOf="@id/backArrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#e5dfdc"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutTitle" />
+
+            <LinearLayout
+                android:id="@+id/stallInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/nvOrder"
+                app:layout_constraintTop_toBottomOf="@id/checkoutTitle">
+
+                <TextView
+                    android:id="@+id/stallName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Stall Name: Example Stall"
+                    android:textSize="18sp"
+                    android:textColor="#171411"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/stallNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stall Number: 123"
+                    android:textSize="16sp"
+                    android:textColor="#877264" />
+
+                <TextView
+                    android:id="@+id/tvOrderType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Type"
+                    android:textSize="16sp"
+                    android:textColor="#877264"/>
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nvOrder"
+                android:layout_width="0dp"
+                android:layout_height="400dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stallInfo"
+                app:layout_constraintBottom_toTopOf="@+id/totalSection"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/orderItemsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    tools:listitem="@layout/checkout_product_item"/>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+            <LinearLayout
+                android:id="@+id/totalSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/paymentMethodSection"
+                app:layout_constraintTop_toBottomOf="@id/nvOrder">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textSize="18sp"
+                    android:textColor="#877264"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvOverallTotalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$28.50"
+                    android:textSize="18sp"
+                    android:textColor="#171411"
+                    android:gravity="end"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paymentMethodSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/placeOrderButton"
+                app:layout_constraintTop_toBottomOf="@id/totalSection">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Method"
+                    android:textSize="18sp"
+                    android:textColor="#171411"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/paymentMethodSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_background"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:spinnerMode="dropdown"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/placeOrderButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place Order"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#df6c20"
+                android:layout_margin="16dp"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/g_white"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/cbStallProductItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageCartProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageCartProduct" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageCartProduct"
+            android:layout_width="80dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            app:shapeAppearanceOverlay="@style/roundImageView"
+            app:layout_constraintBottom_toTopOf="@+id/topLine"
+            app:layout_constraintStart_toEndOf="@+id/cbStallProductItem"
+            android:scaleType="centerCrop"
+            android:src="@color/g_blue"/>
+
+        <TextView
+            android:id="@+id/tvProductCartName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:lines="1"
+            android:text="Chair"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageCartProduct"
+            app:layout_constraintTop_toTopOf="@id/imageCartProduct" />
+
+        <TextView
+            android:id="@+id/tvProductCartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="50"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvProductCartName"
+            app:layout_constraintTop_toBottomOf="@id/tvProductCartName" />
+
+        <ImageView
+            android:id="@+id/imagePlus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/increment_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageMinus"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/decrement_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProductCartName" />
+
+        <TextView
+            android:id="@+id/tvCartProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintTop_toBottomOf="@id/imageMinus"
+            app:layout_constraintEnd_toEndOf="@id/imageMinus"
+            app:layout_constraintBottom_toTopOf="@id/imagePlus"
+            app:layout_constraintStart_toStartOf="@id/imagePlus"/>
+
+        <TextView
+            android:id="@+id/tvProductQuantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:text="Stock : "
+            android:textSize="11sp"
+            android:textColor="@color/g_gray700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvProductCartPrice"
+            app:layout_constraintStart_toStartOf="@+id/tvProductCartPrice" />
+
+        <TextView
+            android:id="@+id/tvProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:textSize="11sp"
+            android:textColor="@color/g_gray700"
+            app:layout_constraintStart_toEndOf="@+id/tvProductQuantityLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvProductQuantityLabel"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarCart"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/candal"
+                        android:gravity="center"
+                        android:text="My Cart        "
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGuideLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96107054" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGuideLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottomGuideLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.72" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/bottomGuideLine"
+                app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
+                app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/toolbarCart"
+                tools:listitem="@layout/cart_product_item" />
+
+
+            <ProgressBar
+                android:id="@+id/progressbarCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvBtnDeleteItemCart"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:paddingTop="5dp"
+                android:drawableRight="@drawable/ic_delete"
+                android:textColor="#ffff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bottomGuideLine"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/totalBoxContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/total_box_background"
+                app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
+                app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/tvBtnDeleteItemCart">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="000"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/buttonBuyNow"
+                style="@style/greenButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/smallButtonHeight"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins"
+                android:text="Buy Now"
+                app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
+                app:layout_constraintStart_toStartOf="@id/leftGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/totalBoxContainer"
+                app:spinning_bar_color="@color/white" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_cart_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:id="@+id/imageEmptyBoxTexture"
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/ic_empty_box_texture"
+                    app:layout_constraintBottom_toBottomOf="@id/imageEmptyBox"
+                    app:layout_constraintTop_toTopOf="@id/imageEmptyBox"
+                    app:layout_constraintStart_toStartOf="@id/imageEmptyBox"
+                    app:layout_constraintEnd_toEndOf="@id/imageEmptyBox"/>
+
+                <ImageView
+                    android:id="@+id/imageEmptyBox"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="130dp"
+                    android:background="@drawable/empty_box_background"
+                    android:src="@drawable/ic_empty_box"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Your cart is empty"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/imageEmptyBoxTexture"
+                    app:layout_constraintStart_toStartOf="@id/imageEmptyBoxTexture"
+                    app:layout_constraintEnd_toEndOf="@id/imageEmptyBoxTexture"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView
+                android:id="@+id/ivTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Payment Confirmation"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/llImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ivTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="Step-by-Step Payment Tutorial"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_margin="20dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivGCashImageFromStall"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="500dp"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="20dp"
+                    android:adjustViewBounds="true"
+                    app:shapeAppearanceOverlay="@style/roundImageView"
+                    />
+
+                <TextView
+                    android:id="@+id/tvStallName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Stall Name"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/g_blue"
+                    />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="Download this image to scan"/>
+
+                <Button
+                    android:id="@+id/btnSaveToGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#2979FF"
+                    android:text="Save Image to Gallery" />
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next Step"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:enabled="false"/>
+
+                <Button
+                    android:id="@+id/btnOpenGCashApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    android:backgroundTint="#2979FF"
+                    android:text="Open Gcash App Now" />
+
+                <ImageView
+                    android:id="@+id/ivScreenshot"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="20dp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btnUploadImageFromGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    android:backgroundTint="#2979FF"
+                    android:text="Upload Screenshot" />
+
+                <Button
+                    android:id="@+id/btnOkay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#00E676"
+                    android:text="Finish"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

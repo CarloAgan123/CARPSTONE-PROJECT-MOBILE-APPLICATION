@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/account"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/logo3"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/logo_black"
+                        app:layout_constraintBottom_toTopOf="@+id/tvRegister"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLoginLeft"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvRegister"
+                        style="@style/h4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Let's Register"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tvLogin2"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLoginLeft"
+                        app:layout_constraintTop_toBottomOf="@+id/logo3" />
+
+                    <TextView
+                        android:id="@+id/tvLogin2"
+                        style="@style/h4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Do you have an account? Login"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etStudentID"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLoginLeft"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+
+                    <EditText
+                        android:id="@+id/etStudentID"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittextHeight"
+                        android:autofillHints="01-01234"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLogin2"
+                        style="@style/editText"
+                        android:textColor="#313131"
+                        android:textColorHint="#737373"
+                        android:hint="Student/Staff ID"
+                        android:inputType="text|number"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittextHeight"
+                        android:autofillHints="01-01234"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                        app:layout_constraintTop_toBottomOf="@+id/etStudentID"
+                        style="@style/editText"
+                        android:textColor="#313131"
+                        android:textColorHint="#737373"
+                        android:hint="Firstname"
+                        android:inputType="text"
+                        android:layout_marginTop="8dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittextHeight"
+                        android:autofillHints="01-01234"
+                        android:textColor="#313131"
+                        android:textColorHint="#737373"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                        app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+                        style="@style/editText"
+                        android:hint="Lastname"
+                        android:inputType="text"
+                        android:layout_marginTop="8dp"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittextHeight"
+                        android:autofillHints="gmail.com"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                        app:layout_constraintTop_toBottomOf="@+id/etLastName"
+                        style="@style/editText"
+                        android:textColor="#313131"
+                        android:textColorHint="#737373"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:layout_marginTop="8dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        style="@style/editText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/edittextHeight"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/password"
+                        android:textColorHint="#737373"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:textColor="#000000"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
+                        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+
+                    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+                        android:id="@+id/registerBtn"
+                        style="@style/blueButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/green_background"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Register"
+                        android:textAlignment="center"
+                        android:textColor="#FFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/guidelineLoginRight"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLoginLeft"
+                        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+                        app:spinning_bar_color="@color/white" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineLoginLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.09" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineLoginRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.91" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

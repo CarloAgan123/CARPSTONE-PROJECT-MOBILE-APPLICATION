@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_left"
+                android:layout_margin="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvOrderList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintTop_toTopOf="@+id/ivClose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/ivClose"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvOrderListTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderList"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrderList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderListTitle"
+                tools:listitem="@layout/order_list_item" />
+
+            <TextView
+                android:id="@+id/tvOrderYesterdayTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Yesterday"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvOrderList"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrderListYesterday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderYesterdayTitle"
+                tools:listitem="@layout/order_list_item"/>
+
+            <TextView
+                android:id="@+id/tvOrderPastTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Past"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvOrderListYesterday"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrderListPast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderPastTitle"
+                tools:listitem="@layout/order_list_item"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

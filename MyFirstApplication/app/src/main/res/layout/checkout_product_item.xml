@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/g_white"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageCheckoutProduct"
+            android:layout_width="80dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="centerCrop"
+            android:src="@color/g_blue"
+            app:layout_constraintBottom_toTopOf="@id/guideline10"
+            app:layout_constraintTop_toTopOf="@+id/guideline9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/roundImageView" />
+
+        <TextView
+            android:id="@+id/tvProductCheckoutName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:lines="1"
+            android:text="Chair"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageCheckoutProduct"
+            app:layout_constraintTop_toTopOf="@id/imageCheckoutProduct" />
+
+        <TextView
+            android:id="@+id/tvProductCheckoutPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="50"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvProductCheckoutName"
+            app:layout_constraintTop_toBottomOf="@id/tvProductCheckoutName" />
+
+        <ImageView
+            android:id="@+id/imagePlus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/increment_icon"
+            app:layout_constraintBottom_toBottomOf="@id/guideline10"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageMinus"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/decrement_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+        <TextView
+            android:id="@+id/tvCheckoutProductQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintBottom_toTopOf="@id/imagePlus"
+            app:layout_constraintEnd_toEndOf="@id/imageMinus"
+            app:layout_constraintStart_toStartOf="@id/imagePlus"
+            app:layout_constraintTop_toBottomOf="@id/imageMinus" />
+
+        <TextView
+            android:id="@+id/tvCheckoutProductStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Stock : "
+            android:textColor="@color/g_gray700"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imagePlus"
+            app:layout_constraintStart_toStartOf="@+id/tvProductCheckoutPrice" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

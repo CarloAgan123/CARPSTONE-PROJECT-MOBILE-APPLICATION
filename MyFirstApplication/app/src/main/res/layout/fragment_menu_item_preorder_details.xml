@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfaf8">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivButtonClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrow_left"
+                app:tint="#1c140d"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="16dp"/>
+
+            <TextView
+                android:id="@+id/tvMenuItemTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Menu Item"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintStart_toEndOf="@id/ivButtonClose"
+                app:layout_constraintTop_toTopOf="@id/ivButtonClose"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/ivStallMenuItemImage"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_margin="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sample_image"
+                android:background="#fcfaf8"
+                app:layout_constraintTop_toBottomOf="@id/tvMenuItemTitle"/>
+
+            <TextView
+                android:id="@+id/tvStallMenuItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Beef Noodle Soup"
+                android:textSize="18sp"
+                android:textColor="#1c140d"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/ivStallMenuItemImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvStallMenuItemPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="11.99"
+                android:textColor="#1c140d"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStallMenuItemName" />
+
+            <TextView
+                android:id="@+id/tvStallMenuItemQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="Quantity: 3 available"
+                android:textColor="#9c6f49"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStallMenuItemPrice" />
+
+            <TextView
+                android:id="@+id/tvStallNameMenuItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="Stall: Dumpling House"
+                android:textColor="#9c6f49"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStallMenuItemQuantity" />
+
+            <TextView
+                android:id="@+id/tvMenuItemDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="200dp"
+                android:text="Sun, September 30, 2024"
+                android:textColor="#9c6f49"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStallNameMenuItem" />
+
+            <Button
+                android:id="@+id/btnStallMenuItemPreOrder"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:backgroundTint="#00B0FF"
+                android:text="Pre-Order"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuItemDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

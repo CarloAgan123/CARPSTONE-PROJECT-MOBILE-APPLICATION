@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/allerta</item>
+        <item>@font/archivo_black</item>
+        <item>@font/belleza</item>
+        <item>@font/candal</item>
+        <item>@font/open_sans</item>
+        <item>@font/open_sans_bold</item>
+        <item>@font/poppins</item>
+        <item>@font/poppins_light</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/poppins_thin</item>
+        <item>@font/roboto_mono</item>
+        <item>@font/roboto_slab</item>
+        <item>@font/roboto_slab_bold</item>
+        <item>@font/work_sans</item>
+        <item>@font/work_sans_bold</item>
+        <item>@font/work_sans_medium</item>
+    </array>
+</resources>
